@@ -1,0 +1,35 @@
+#include <Servo.h>
+Servo cntServo1; 
+int spin1 = 2; // continuum servo pin on 33
+
+int potPin = A6;   // potentiometer
+int potValue;
+
+
+int maxAngle;   //initial angle plus enables variable for rotation
+void setup() 
+{
+cntServo1.attach(spin1);
+Serial.begin(9600);
+cntServo1.write(maxAngle);
+
+}
+
+void loop() 
+{
+
+//read from potentiometer to use later
+potValue = analogRead(potPin);
+Serial.print("POT VL");
+Serial.println(potValue);
+
+// maxAngle = map(potValue,1023,0,0,180);
+
+if (potValue >= 800);
+{maxAngle = 130;}
+maxAngle = 100;   //initial angle plus enables variable for rotation
+// maxAngle = maxAngle;
+
+// else (cntServo1.write(90));
+
+}
