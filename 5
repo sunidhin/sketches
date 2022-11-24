@@ -1,0 +1,27 @@
+int akshayLedPin = 2;
+int aksharaLedPin = 3;
+int AadilLedPin = 4;
+
+int LightSensorPin = A0;
+int analogValue = 0;
+
+void setup() {
+pinMode(akshayLedPin, OUTPUT);
+pinMode(aksharaLedPin, OUTPUT);
+pinMode(AadilLedPin, OUTPUT);
+
+}
+
+void loop() {
+analogValue = analogRead(LightSensorPin);
+if (analogValue<50){
+  digitalWrite(akshayLedPin, HIGH);
+}
+else if (analogValue>=50 && analogValue<=100){
+  digitalWrite(aksharaLedPin, HIGH);
+}
+delay(200);
+digitalWrite(akshayLedPin, LOW);
+digitalWrite(aksharaLedPin, LOW);
+digitalWrite(AadilLedPin, LOW);
+}
